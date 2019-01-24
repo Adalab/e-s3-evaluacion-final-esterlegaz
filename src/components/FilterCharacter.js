@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
 
 class FilterCharacter extends Component {
     render() {
@@ -9,5 +10,9 @@ class FilterCharacter extends Component {
         );
     }
 }
+
+FilterCharacter.propTypes = {
+    includeNameFilter: PropTypes.func.isRequired,
+};
 
 export default FilterCharacter;

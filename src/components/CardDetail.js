@@ -6,10 +6,10 @@ class CardDetail extends Component {
 
     getLife() {
         const character = this.props.character;
-        if (character.alive === true) {
-            return 'Vivo';
+        if (character.alive === false) {
+            return 'Muerto';
         } else {
-            return 'Muerto'
+            return 'Vivo'
         }
     }
 
@@ -41,12 +41,7 @@ class CardDetail extends Component {
 }
 
 CardDetail.propTypes = {
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    house: PropTypes.string.isRequired,
-    yearOfBirth: PropTypes.number.isRequired,
-    patronus: PropTypes.string.isRequired,
-    alive: PropTypes.bool.isRequired
+    character: PropTypes.array.isRequired,
   };
 
 export default CardDetail;
