@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { fetchCharacters } from './services/CharactersService';
 import Home from './components/Home';
 import CardDetail from './components/CardDetail';
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   constructor(props) {

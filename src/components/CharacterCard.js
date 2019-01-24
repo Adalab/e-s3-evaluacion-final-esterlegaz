@@ -6,9 +6,11 @@ class CharacterCard extends Component {
     render() {
         return (
             <React.Fragment>
-                <img className="item__img" src={this.props.image} alt={this.props.name} />
-                <Link className="item__link" to= {`/card/${this.props.id}`}><h2 className="item__name">{this.props.name}</h2></Link>
-                <p className="item__house">{this.props.house}</p>
+                <Link className="item__link" to={`/card/${this.props.id}`}>
+                    <img className="item__img" src={this.props.image} alt={this.props.name} />
+                    <h2 className="item__name">{this.props.name}</h2>
+                    <p className="item__house">{this.props.house}</p>
+                </Link>
             </React.Fragment>
         );
     }
@@ -17,7 +19,8 @@ class CharacterCard extends Component {
 CharacterCard.propTypes = {
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
-    house: PropTypes.string.isRequired
-  };
+    house: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired
+};
 
 export default CharacterCard;
