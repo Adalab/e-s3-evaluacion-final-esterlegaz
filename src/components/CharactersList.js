@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CharacterCard from './CharacterCard';
 
 class CharactersList extends Component {
     render() {
@@ -6,16 +7,14 @@ class CharactersList extends Component {
             <ul className="list__container">
                 {this.props.filterCharacter().map((person, index) => {
                     return (
-                        <li className="list__item" key={index}>
-                            <img className="item__img" src={person.image} alt={person.name} />
-                            <h2>{person.name}</h2>
-                            <p>{person.house}</p>
-                        </li>
+                        <CharacterCard name={person.name} house={person.house} image={person.image} index={index}/>
                     );
                 })}
             </ul>
         );
     }
 }
+
+
 
 export default CharactersList;

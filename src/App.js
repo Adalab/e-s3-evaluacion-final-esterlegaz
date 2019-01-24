@@ -20,8 +20,11 @@ class App extends Component {
   fetchData() {
     fetchCharacters()
       .then(data => {
+        const newCharacter = data.map((item, index) => {
+          return { ...item, id: index }
+        });
         this.setState({
-          character: data
+          character: newCharacter
         })
       })
   }
