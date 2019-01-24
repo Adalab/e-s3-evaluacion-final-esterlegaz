@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
+import CharacterCard from './CharacterCard';
 
 class CharactersList extends Component {
     render() {
         return (
             <ul className="list__container">
-                {this.props.filterCharacter().map((person, index) => {
+                {this.props.filterCharacter().map((person) => {
                     return (
-                        <li className="list__item" key={index}>
-                            <img className="item__img" src={person.image} alt={person.name} />
-                            <h2>{person.name}</h2>
-                            <p>{person.house}</p>
+                        <li className="list__item" key={person.id} id={person.id}>
+                            <CharacterCard id={person.id} name={person.name} house={person.house} image={person.image} index={person.id} />
                         </li>
                     );
                 })}
@@ -17,5 +17,9 @@ class CharactersList extends Component {
         );
     }
 }
+
+CharactersList.propTypes = {
+    filterCharacter: PropTypes.func.isRequired,
+};
 
 export default CharactersList;
