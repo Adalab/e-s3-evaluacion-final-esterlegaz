@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import { fetchCharacters } from './services/CharactersService';
-import CharacterList from './components/CharactersList';
-import FilterCharacter from './components/FilterCharacter';
+import Home from './components/Home';
+import CardDetail from './components/CardDetail';
 import './App.css';
 
 class App extends Component {
@@ -14,6 +15,9 @@ class App extends Component {
     this.fetchData = this.fetchData.bind(this);
     this.filterCharacter = this.filterCharacter.bind(this);
     this.includeNameFilter = this.includeNameFilter.bind(this);
+  }
+
+  componentDidMount() {
     this.fetchData();
   }
 
@@ -29,7 +33,7 @@ class App extends Component {
       })
   }
 
-  filterCharacter(){
+  filterCharacter() {
     return this.state.character.filter(item => item.name.toUpperCase().includes(this.state.nameFilter.toUpperCase()));
   }
 
@@ -43,8 +47,10 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-      <FilterCharacter includeNameFilter={this.includeNameFilter}/>
-      <CharacterList character={this.state.character} filterCharacter={this.filterCharacter}/>
+        <Switch>
+          <Route exact path='/' render={() => <Home includeNameFilter={this.includeNameFilter} character={this.state.character} filterCharacter={this.filterCharacter} />} />
+          <Route path='/card/:id' render={props => <CardDetail match={props.match} character={this.state.character} />} />
+        </Switch>
       </React.Fragment>
     )
   }

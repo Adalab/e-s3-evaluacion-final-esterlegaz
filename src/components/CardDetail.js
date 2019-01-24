@@ -1,16 +1,30 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
 import { Link } from 'react-router-dom';
 
 class CardDetail extends Component {
+
+    getLife() {
+        const character = this.props.character;
+        if (character.alive === true) {
+            return 'Vivo';
+        } else {
+            return 'Muerto'
+        }
+    }
+
     render() {
         const CharacterId = this.props.match.params.id;
         if (this.props.character.length > 0 && CharacterId < this.props.character.length) {
             const character = this.props.character[CharacterId];
             return (
                 <div className="card">
-                    <img className="item__img" src={this.props.image} alt={this.props.name} />
-                    <h2>{this.props.name}</h2>
-                    <p>{this.props.house}</p>
+                    <h2 className="item__name">{character.name}</h2>
+                    <img className="item__img" src={character.image} alt={character.name} />
+                    <p>{character.house}</p>
+                    <p>{character.yearOfBirth}</p>
+                    <p>{character.patronus}</p>
+                    <p>{this.getLife()}</p>
                     <Link to="/">Volver</Link>
                 </div>
             );
@@ -25,5 +39,14 @@ class CardDetail extends Component {
         }
     }
 }
+
+CardDetail.propTypes = {
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    house: PropTypes.string.isRequired,
+    yearOfBirth: PropTypes.number.isRequired,
+    patronus: PropTypes.string.isRequired,
+    alive: PropTypes.bool.isRequired
+  };
 
 export default CardDetail;
