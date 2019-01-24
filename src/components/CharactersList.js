@@ -8,7 +8,7 @@ class CharactersList extends Component {
                 {this.props.filterCharacter().map((person) => {
                     return (
                         <li className="list__item" key={person.id} id={person.id}>
-                            <CharacterCard name={person.name} house={person.house} image={person.image} index={person.id} />
+                            <CharacterCard id={person.id} name={person.name} house={person.house} image={person.image} index={person.id} />
                         </li>
                     );
                 })}
