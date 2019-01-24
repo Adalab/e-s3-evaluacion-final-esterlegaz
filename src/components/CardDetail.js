@@ -18,15 +18,19 @@ class CardDetail extends Component {
         if (this.props.character.length > 0 && CharacterId < this.props.character.length) {
             const character = this.props.character[CharacterId];
             return (
+                <React.Fragment>
                 <div className="card__detail">
-                    <h2 className="detail__name">{character.name}</h2>
                     <img className="detail__img" src={character.image} alt={character.name} />
-                    <p className="detail__house">{character.house}</p>
-                    <p className="detail__year">{character.yearOfBirth}</p>
-                    <p className="detail__patronus">{character.patronus}</p>
-                    <p className="detail__alive">{this.getLife()}</p>
-                    <Link to="/" className="detail__return">Volver</Link>
+                    <div className="detail__content">
+                        <h2 className="detail__name">{character.name}</h2>
+                        <p className="detail__house">Casa: {character.house}</p>
+                        <p className="detail__year">Nacimiento: {character.yearOfBirth}</p>
+                        <p className="detail__patronus">Patronus: {character.patronus}</p>
+                        <p className="detail__alive">Estado: {this.getLife()}</p>
+                    </div>
                 </div>
+                <Link to="/" className="detail__return">Volver</Link>
+                </React.Fragment>
             );
 
         } else {
@@ -42,6 +46,6 @@ class CardDetail extends Component {
 
 CardDetail.propTypes = {
     character: PropTypes.array.isRequired,
-  };
+};
 
 export default CardDetail;
