@@ -15,7 +15,6 @@ class App extends Component {
     this.fetchData = this.fetchData.bind(this);
     this.filterCharacter = this.filterCharacter.bind(this);
     this.includeNameFilter = this.includeNameFilter.bind(this);
-    this.getLife = this.getLife.bind(this);
     this.fetchData();
   }
 
@@ -40,17 +39,6 @@ class App extends Component {
     this.setState({
       nameFilter: guilty
     })
-  }
-
-  getLife() {
-    if (this.state.character.alive === true) {
-      this.setState({
-        alive: 'Vivo'})
-    }
-    else {
-      this.setState({
-        alive: 'Muerto'})
-    }
   }
 
   render() {

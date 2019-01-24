@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class CardDetail extends Component {
+
+    getLife() {
+        const character = this.props.character;
+        if (character.alive === true) {
+            return 'Vivo';
+        } else {
+            return 'Muerto'
+        }
+    }
+
     render() {
         const CharacterId = this.props.match.params.id;
         if (this.props.character.length > 0 && CharacterId < this.props.character.length) {
@@ -13,7 +23,7 @@ class CardDetail extends Component {
                     <p>{character.house}</p>
                     <p>{character.yearOfBirth}</p>
                     <p>{character.patronus}</p>
-                    <p>{this.props.getLife()}</p>
+                    <p>{this.getLife()}</p>
                     <Link to="/">Volver</Link>
                 </div>
             );
