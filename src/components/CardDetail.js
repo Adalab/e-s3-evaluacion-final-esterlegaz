@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
 import { Link } from 'react-router-dom';
 
 class CardDetail extends Component {
@@ -38,5 +39,14 @@ class CardDetail extends Component {
         }
     }
 }
+
+CardDetail.propTypes = {
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    house: PropTypes.string.isRequired,
+    yearOfBirth: PropTypes.number.isRequired,
+    patronus: PropTypes.string.isRequired,
+    alive: PropTypes.bool.isRequired
+  };
 
 export default CardDetail;

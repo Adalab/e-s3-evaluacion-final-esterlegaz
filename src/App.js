@@ -15,6 +15,9 @@ class App extends Component {
     this.fetchData = this.fetchData.bind(this);
     this.filterCharacter = this.filterCharacter.bind(this);
     this.includeNameFilter = this.includeNameFilter.bind(this);
+  }
+
+  componentDidMount() {
     this.fetchData();
   }
 
@@ -46,7 +49,7 @@ class App extends Component {
       <React.Fragment>
         <Switch>
           <Route exact path='/' render={() => <Home includeNameFilter={this.includeNameFilter} character={this.state.character} filterCharacter={this.filterCharacter} />} />
-          <Route path='/card/:id' render={props => <CardDetail match={props.match} character={this.state.character} getLife={this.getLife} />} />
+          <Route path='/card/:id' render={props => <CardDetail match={props.match} character={this.state.character} />} />
         </Switch>
       </React.Fragment>
     )

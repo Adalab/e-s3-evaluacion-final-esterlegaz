@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
 import { Link } from 'react-router-dom';
 
 class CharacterCard extends Component {
@@ -12,5 +13,11 @@ class CharacterCard extends Component {
         );
     }
 }
+
+CharacterCard.propTypes = {
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    house: PropTypes.string.isRequired
+  };
 
 export default CharacterCard;
