@@ -6,10 +6,10 @@ class CardDetail extends Component {
 
     getLife() {
         const character = this.props.character;
-        if (character.alive === true) {
-            return 'Vivo';
+        if (character.alive === false) {
+            return 'Muerto';
         } else {
-            return 'Muerto'
+            return 'Vivo'
         }
     }
 
@@ -18,15 +18,19 @@ class CardDetail extends Component {
         if (this.props.character.length > 0 && CharacterId < this.props.character.length) {
             const character = this.props.character[CharacterId];
             return (
-                <div className="card">
-                    <h2 className="item__name">{character.name}</h2>
-                    <img className="item__img" src={character.image} alt={character.name} />
-                    <p>{character.house}</p>
-                    <p>{character.yearOfBirth}</p>
-                    <p>{character.patronus}</p>
-                    <p>{this.getLife()}</p>
-                    <Link to="/">Volver</Link>
+                <React.Fragment>
+                <div className="card__detail">
+                    <img className="detail__img" src={character.image} alt={character.name} />
+                    <div className="detail__content">
+                        <h2 className="detail__name">{character.name}</h2>
+                        <p className="detail__house">Casa: {character.house}</p>
+                        <p className="detail__year">Nacimiento: {character.yearOfBirth}</p>
+                        <p className="detail__patronus">Patronus: {character.patronus}</p>
+                        <p className="detail__alive">Estado: {this.getLife()}</p>
+                    </div>
                 </div>
+                <Link to="/" className="detail__return">Volver</Link>
+                </React.Fragment>
             );
 
         } else {
@@ -41,12 +45,7 @@ class CardDetail extends Component {
 }
 
 CardDetail.propTypes = {
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    house: PropTypes.string.isRequired,
-    yearOfBirth: PropTypes.number.isRequired,
-    patronus: PropTypes.string.isRequired,
-    alive: PropTypes.bool.isRequired
-  };
+    character: PropTypes.array.isRequired,
+};
 
 export default CardDetail;

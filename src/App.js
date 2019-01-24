@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { fetchCharacters } from './services/CharactersService';
 import Home from './components/Home';
 import CardDetail from './components/CardDetail';
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   constructor(props) {
@@ -49,7 +49,7 @@ class App extends Component {
       <React.Fragment>
         <Switch>
           <Route exact path='/' render={() => <Home includeNameFilter={this.includeNameFilter} character={this.state.character} filterCharacter={this.filterCharacter} />} />
-          <Route path='/card/:id' render={props => <CardDetail match={props.match} character={this.state.character} />} />
+          <Route path='/card/:id' render={props => <CardDetail match={props.match} character={this.state.character} name={this.state.character.name}/>} />
         </Switch>
       </React.Fragment>
     )

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
 import CharacterCard from './CharacterCard';
 
 class CharactersList extends Component {
@@ -17,6 +18,8 @@ class CharactersList extends Component {
     }
 }
 
-
+CharactersList.propTypes = {
+    filterCharacter: PropTypes.func.isRequired,
+};
 
 export default CharactersList;
