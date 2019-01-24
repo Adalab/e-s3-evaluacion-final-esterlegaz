@@ -3,17 +3,13 @@ import React, { Component } from 'react';
 class CharacterCard extends Component {
     render() {
         return (
-            <li className="list__item" key={this.props.index}>
+            <React.Fragment>
                 <img className="item__img" src={this.props.image} alt={this.props.name} />
                 <h2>{this.props.name}</h2>
                 <p>{this.props.house}</p>
-            </li>
+            </React.Fragment>
         );
     }
-}
-
-CharacterCard.defaultProps = {
-    house: "Sin casa",
 }
 
 export default CharacterCard;
