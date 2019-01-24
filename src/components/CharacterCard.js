@@ -7,8 +7,8 @@ class CharacterCard extends Component {
         return (
             <React.Fragment>
                 <img className="item__img" src={this.props.image} alt={this.props.name} />
-                <Link to= {`/card/${this.props.id}`}><h2>{this.props.name}</h2></Link>
-                <p>{this.props.house}</p>
+                <Link className="item__link" to= {`/card/${this.props.id}`}><h2 className="item__name">{this.props.name}</h2></Link>
+                <p className="item__house">{this.props.house}</p>
             </React.Fragment>
         );
     }
