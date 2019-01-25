@@ -99,7 +99,7 @@ body {
 
 .detail__name{
   margin: 0;
-  font-size: 40px;
+  font-size: 30px;
   padding: 20px 20px 0 20px;
 }
 
@@ -125,7 +125,7 @@ body {
   flex-direction: column;
   width: 100%;
   font-family: 'Mountains of Christmas', cursive;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .detail__return{
@@ -138,16 +138,17 @@ body {
   justify-content: center;
   width: 250px;
   margin: 0 auto;
+  font-family: 'Mountains of Christmas', cursive;
+  font-size: 24px;
 }
 
 .detail__img{
-  width: 200px;
-  min-height: 350px;
+  width: 250px;
+  height: 100%;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
     @media all and (min-width: 768px){
-      width: 300px;
-      height: 450px;
+      width: 350px;
   }
 }
 
