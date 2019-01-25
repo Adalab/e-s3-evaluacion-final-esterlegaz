@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.fetchData();
+    this.getSavedCharacter();
   }
 
   fetchData() {
@@ -27,10 +27,26 @@ class App extends Component {
         const newCharacter = data.map((item, index) => {
           return { ...item, id: index }
         });
+        this.saveCharacter(newCharacter, 'savedCharacter');
         this.setState({
           character: newCharacter
         })
       })
+  }
+
+  saveCharacter(characters, characterName) {
+    localStorage.setItem(characterName, JSON.stringify(characters));
+  }
+
+  getSavedCharacter(){
+    if (localStorage.getItem('savedCharacter') !== null){
+      const mySavedCharacter = JSON.parse(localStorage.getItem('savedCharacter'));
+      this.setState({
+        character: mySavedCharacter
+      })
+    } else {
+      this.fetchData()
+    }
   }
 
   filterCharacter() {
