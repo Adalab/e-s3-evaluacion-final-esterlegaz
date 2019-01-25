@@ -1,13 +1,14 @@
 {
-  "main.css": "./static/css/main.b41bd053.chunk.css",
-  "main.js": "./static/js/main.5540092c.chunk.js",
-  "main.js.map": "./static/js/main.5540092c.chunk.js.map",
-  "static/js/1.75dceaf7.chunk.js": "./static/js/1.75dceaf7.chunk.js",
-  "static/js/1.75dceaf7.chunk.js.map": "./static/js/1.75dceaf7.chunk.js.map",
+  "main.css": "./static/css/main.2e314dee.chunk.css",
+  "main.js": "./static/js/main.da8eec6c.chunk.js",
+  "main.js.map": "./static/js/main.da8eec6c.chunk.js.map",
+  "static/js/1.f0684ebf.chunk.js": "./static/js/1.f0684ebf.chunk.js",
+  "static/js/1.f0684ebf.chunk.js.map": "./static/js/1.f0684ebf.chunk.js.map",
   "runtime~main.js": "./static/js/runtime~main.4a686d48.js",
   "runtime~main.js.map": "./static/js/runtime~main.4a686d48.js.map",
-  "static/css/main.b41bd053.chunk.css.map": "./static/css/main.b41bd053.chunk.css.map",
+  "static/media/App.scss": "./static/media/hufflepuff.77a46dbd.jpg",
+  "static/css/main.2e314dee.chunk.css.map": "./static/css/main.2e314dee.chunk.css.map",
   "index.html": "./index.html",
-  "precache-manifest.4a8f1ea66cd562b5be167085e20857a6.js": "./precache-manifest.4a8f1ea66cd562b5be167085e20857a6.js",
+  "precache-manifest.86963e2a16667b094ec37263548d841b.js": "./precache-manifest.86963e2a16667b094ec37263548d841b.js",
   "service-worker.js": "./service-worker.js"
 }
