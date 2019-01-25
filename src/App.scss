@@ -9,6 +9,11 @@ body {
 .main__title{
   text-align: center;
   font-size: 40px;
+  margin-top: 50px;
+}
+
+.page__input{
+  text-align: center;
 }
 
 .input__container{
@@ -23,9 +28,12 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-    @media all and (min-width:768px) {
-      margin-left: 40px;
+    @media all and (min-width: 515px){
       display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-left: 40px;
+    }
+    @media all and (min-width:768px) {
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 10px;
   }
@@ -107,6 +115,9 @@ body {
 
 .detail__content{
   color: white; 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .detail__return{
@@ -122,10 +133,14 @@ body {
 }
 
 .detail__img{
-  width: 300px;
-  height: 450px;
+  width: 200px;
+  height: 350px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+    @media all and (min-width: 768px){
+      width: 300px;
+      height: 450px;
+  }
 }
 
 .gryffindor {

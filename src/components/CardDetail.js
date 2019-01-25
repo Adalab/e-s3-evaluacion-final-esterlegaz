@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Gryffindor from './../images/gryffindor.jpg';
 import PropTypes from "prop-types";
 import { Link } from 'react-router-dom';
 
@@ -11,7 +10,7 @@ class CardDetail extends Component {
         else {
             return (
                 <React.Fragment>
-                    <span>Muerto </span><i class="fas fa-skull-crossbones"></i>
+                    <span>Muerto </span><i className="fas fa-skull-crossbones"></i>
                 </React.Fragment>
             )
         }
@@ -27,11 +26,40 @@ class CardDetail extends Component {
         else if (house === 'Ravenclaw'){
             return 'ravenclaw'
         }
-        else {
+        else if (house === 'Hufflepuff'){
             return 'hufflepuff'
+        }
+        else {
+            return ''
         }
     }
 
+    noPatronus(patronus){
+        if (patronus === ''){
+            return 'Sin patronus'
+        }
+        else {
+            return patronus
+        }
+    }
+
+    noHouse (house){
+        if (house === ''){
+            return 'Sin casa'
+        }
+        else {
+            return house
+        }
+    }
+
+    noBirth (birth){
+        if (birth === ''){
+            return 'Sin datos'
+        }
+        else {
+            return birth
+        }
+    }
 
     render() {
         const CharacterId = this.props.match.params.id;
@@ -44,9 +72,9 @@ class CardDetail extends Component {
                     <img className="detail__img" src={character.image} alt={character.name} />
                     <div className="detail__content">
                         <h2 className="detail__name">{character.name}</h2>
-                        <p className="detail__house">Casa: {character.house}</p>
-                        <p className="detail__year">Nacimiento: {character.yearOfBirth}</p>
-                        <p className="detail__patronus">Patronus: {character.patronus}</p>
+                        <p className="detail__house">Casa: {this.noHouse(character.house)}</p>
+                        <p className="detail__year">Nacimiento: {this.noBirth(character.yearOfBirth)}</p>
+                        <p className="detail__patronus">Patronus: {this.noPatronus(character.patronus)}</p>
                         <p className="detail__alive">Estado: {this.getLife(character.alive)}</p>
                         <div className={`${this.getHouse(character.house)}`}></div>
                     </div>
