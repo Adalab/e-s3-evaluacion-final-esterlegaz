@@ -9,6 +9,11 @@ body {
 .main__title{
   text-align: center;
   font-size: 40px;
+  margin-top: 50px;
+}
+
+.page__input{
+  text-align: center;
 }
 
 .input__container{
@@ -23,9 +28,12 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-    @media all and (min-width:768px) {
-      margin-left: 40px;
+    @media all and (min-width: 515px){
       display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-left: 40px;
+    }
+    @media all and (min-width:768px) {
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 10px;
   }
@@ -69,11 +77,18 @@ body {
   border-top-left-radius: 25px;
 }
 
-.card__detail{
-  display: flex;
-  margin: 20px 0;
+.card__container{
   display: flex;
   justify-content: center;
+}
+
+.card__detail{
+  display: flex;
+  text-align: center;
+  margin: 20px 0;
+  border-radius: 20px;
+  width: 500px;
+  background: #f2690d;
 }
 
 .detail__name{
@@ -99,8 +114,10 @@ body {
 }
 
 .detail__content{
-  background: #f2690d;
   color: white; 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .detail__return{
@@ -112,5 +129,53 @@ body {
   display: flex;
   justify-content: center;
   width: 250px;
+  margin: 0 auto;
+}
+
+.detail__img{
+  width: 200px;
+  height: 350px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+    @media all and (min-width: 768px){
+      width: 300px;
+      height: 450px;
+  }
+}
+
+.gryffindor {
+  width: 100px;
+  height: 100px;
+  background: url('./images/gryffindor.jpg') center center no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  margin: 30px;
+  margin: 0 auto;
+}
+
+.slytherin {
+  width: 100px;
+  height: 100px;
+  background: url('./images/slytherin.jpg') center center no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+.ravenclaw {
+  width: 100px;
+  height: 100px;
+  background: url('./images/ravenclaw.jpg') center center no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+.hufflepuff {
+  width: 100px;
+  height: 100px;
+  background: url('./images/hufflepuff.jpg') center center no-repeat;
+  background-size: cover;
+  border-radius: 20px;
   margin: 0 auto;
 }
