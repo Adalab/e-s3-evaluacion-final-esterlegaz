@@ -10,6 +10,10 @@ body {
   text-align: center;
   font-size: 40px;
   margin-top: 50px;
+  font-family: 'Mountains of Christmas', cursive;
+    @media all and (min-width: 768px){
+      font-size: 60px;
+    }
 }
 
 .page__input{
@@ -49,6 +53,7 @@ body {
   border-radius: 25px;
   width: 250px;
   margin-bottom: 10px;
+  font-family: 'Mountains of Christmas', cursive;
   @media all and (min-width:768px) {
   margin: 0;
   }
@@ -62,10 +67,11 @@ body {
 
 .item__name{
   text-align: center;
+  font-size: 34px;
 }
 
 .item__house {
-  font-size: 14px;
+  font-size: 24px;
   color: white;
   text-align: center;
 }
@@ -93,7 +99,7 @@ body {
 
 .detail__name{
   margin: 0;
-  font-size: 20px;
+  font-size: 40px;
   padding: 20px 20px 0 20px;
 }
 
@@ -118,6 +124,8 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  font-family: 'Mountains of Christmas', cursive;
+  font-size: 15px;
 }
 
 .detail__return{
@@ -134,7 +142,7 @@ body {
 
 .detail__img{
   width: 200px;
-  height: 350px;
+  min-height: 350px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
     @media all and (min-width: 768px){
@@ -178,4 +186,10 @@ body {
   background-size: cover;
   border-radius: 20px;
   margin: 0 auto;
+}
+
+.list__error {
+  text-align: center;
+  font-family: 'Mountains of Christmas', cursive;
+  font-size: 30px;
 }
